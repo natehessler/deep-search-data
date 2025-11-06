@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Search Usage Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Deep Search Usage Dashboard</h1>
+    <p class="subtitle">Customer usage data from BigQuery</p>
+    
+    <div class="controls">
+      <div>
+        <label>Time Range: </label>
+        <select id="daysFilter">
+          <option value="7">Last 7 days</option>
+          <option value="14">Last 14 days</option>
+          <option value="30" selected>Last 30 days</option>
+          <option value="60">Last 60 days</option>
+          <option value="90">Last 90 days</option>
+        </select>
+      </div>
+      <div>
+        <label>Organization: </label>
+        <input type="text" id="orgFilter" placeholder="Filter by org...">
+      </div>
+      <button onclick="loadData()">Refresh</button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('orgs')">Organizations</button>
+      <button class="tab" onclick="switchTab('users')">Users</button>
+      <button class="tab" onclick="switchTab('overages')">Overages</button>
+      <button class="tab" onclick="switchTab('events')">Event Breakdown</button>
+    </div>
+
+    <div class="content">
+      <div id="orgs-tab" class="tab-content active">
+        <div id="orgs-stats" class="stat-cards"></div>
+        <div id="orgs-content"></div>
+      </div>
+      
+      <div id="users-tab" class="tab-content">
+        <div id="users-content"></div>
+      </div>
+      
+      <div id="overages-tab" class="tab-content">
+        <div id="overages-content"></div>
+      </div>
+      
+      <div id="events-tab" class="tab-content">
+        <div id="events-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

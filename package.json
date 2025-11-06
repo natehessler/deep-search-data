@@ -1,0 +1,17 @@
+{
+  "name": "deep-search-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.9.0",
+    "express": "^4.21.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
