@@ -23,10 +23,12 @@
         </select>
       </div>
       <div>
-        <label>Organization: </label>
-        <input type="text" id="orgFilter" placeholder="Filter by org...">
+        <label id="filterLabel">Organization: </label>
+        <input type="text" id="orgFilter" placeholder="Filter by org..." list="orgList">
+        <datalist id="orgList"></datalist>
       </div>
       <button onclick="loadData()">Refresh</button>
+      <button onclick="clearFilters()">Clear</button>
     </div>
 
     <div class="tabs">
